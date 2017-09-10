@@ -220,14 +220,16 @@
 				console.log(x)
 				console.log(l)
 				console.log(_this.maxProgressWidth)
-				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth - (l / 2)
+				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth
 				_this.wxAudioC.onmousemove = function (event) {
 					if (_this.isDrag) {
 						var e = event || window.event
 						var thisX = e.clientX
 						_this.dragProgressTo = Math.min(_this.maxProgressWidth, Math.max(0, l + (thisX - x)))
 						// _this.wxAudioOrigin.style.left = to + 'px'
-						// console.log(to + '--------' + max)
+						console.log(e.clientX + '--------')
+						console.log(_this.maxProgressWidth + '--------')
+						console.log(l + (thisX - x) + '--------')
 						// update Time
 						_this.updatePorgress(_this)
 					}
@@ -258,7 +260,7 @@
 				var x = e.touches[0].clientX
 				var l = e.target.offsetLeft
 
-				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth - (l / 2)
+				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth
 
 				_this.wxAudioC.ontouchmove = function (event) {
 					if (_this.isDrag) {
