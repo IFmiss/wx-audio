@@ -265,8 +265,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
+  overflow: hidden;
 }
-/* line 145, ../sass/wx-audio/_audio.scss */
+/* line 146, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-time span {
   font-size: 12px;
   color: #8c8c8c;
