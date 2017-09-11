@@ -7,8 +7,7 @@
 			title: '这是一个测试title',
 			src: '',
 			disc: '这是一个测试disc',
-			loop: true,
-			autoplay: false
+			loop: true
 		}
 
 		this.opt = this.extend(this.value, options, true)
@@ -28,6 +27,10 @@
 		this.currentP = 0
 		this.maxProgressWidth = 0
 		this.dragProgressTo = 0
+
+		// 通过时间戳与当前时间的差值来判断是否需要加载
+		this.reduceTBefore = 0   // 时间戳与当前时间的差值 (初始化)
+		this.reduceTAfter = 0   // 时间戳与当前时间的差值 (执行中)
 
         this.initDom();
 	}
@@ -161,8 +164,10 @@
 			var _this = this
 			// 音频事件
 			_this.wxAudio.onplaying = function () {
+				var date = new Date ()
 				_this.isPlaying = true
 				_this.showLoading(false)
+				_this.reduceTBefore = Date.parse(date) - Math.floor(_this.wxAudio.currentTime * 1000)
 				_this.wxAudioStateImg.src = '../images/playing.gif'
 			},
 			_this.wxAudio.onpause = function () {
@@ -184,22 +189,38 @@
 						bufferedT += _this.wxAudio.buffered.end(i) - _this.wxAudio.buffered.start(i)
 						if(bufferedT > _this.durationT) {
 							bufferedT = _this.durationT
+							_this.showLoading(false)
 							console.log('缓冲完成')
 						} else {
-							console.log('缓冲中...')
+							_this.showLoading(true)
+							// console.log('缓冲中...')
 						}
 					}
 					var bufferedP = Math.floor((bufferedT / _this.durationT) * 100)
 					_this.wxBufferP.style.width = bufferedP + '%'
+				}
+
+				// ===========================
+				var date = new Date ()
+				// console.log(_this.reduceTAfter + '-------------------------' + _this.reduceTBefore)
+				if(!_this.wxAudio.paused) {
+					_this.reduceTAfter = Date.parse(date) - Math.floor(_this.currentT * 1000)
+					if(_this.reduceTAfter - _this.reduceTBefore > 1000) {
+						_this.showLoading(true)
+					} else {
+						_this.showLoading(false)
+					}
 				} else {
-					console.log('未缓冲')
+					return
 				}
 			},
 			// 绑定进度条
 			_this.wxAudio.ontimeupdate = function () {
+				var date = new Date ()
 				if (!_this.isDrag) {
-					// console.log(Math.floor())
+					_this.currentT = _this.wxAudio.currentTime
 					_this.currentP = Number((_this.wxAudio.currentTime / _this.durationT) * 100)
+					_this.reduceTBefore = Date.parse(date) - Math.floor(_this.currentT * 1000)
 					_this.currentP = _this.currentP > 100 ? 100 : _this.currentP
 					_this.wxVoiceP.style.width = _this.currentP + '%'
 					_this.wxAudioOrigin.style.left = _this.currentP + '%'
@@ -216,10 +237,10 @@
 				_this.isDrag = true
 				var e = event || window.event
 				var x = e.clientX
-				var l = event.target.offsetLeft
-				console.log(x)
-				console.log(l)
-				console.log(_this.maxProgressWidth)
+				var l = event.target.offsetLeft + 7
+				// console.log(x)
+				// console.log(l)
+				// console.log(_this.maxProgressWidth)
 				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth
 				_this.wxAudioC.onmousemove = function (event) {
 					if (_this.isDrag) {
@@ -285,7 +306,7 @@
 				var e = event || window.event
 				var l = e.layerX
 				var w = _this.wxAudioDetail.offsetWidth
-				console.log(l + '------------' + w)
+				// console.log(l + '------------' + w)
 				_this.wxAudio.currentTime = Math.floor(l / w * _this.durationT)
 			}
 
