@@ -4,8 +4,10 @@
 	height:auto;
 	padding:8px 10px;
 	border: 1px solid rgba(33,44,55,0.3);
-	margin:30px auto;
+	margin:0 auto;
 	font-size:0;
+	@include box-sizing(border-box);
+	-webkit-tap-highlight-color:transparent;
 	.wx-audio-info{
 		display: none;
 	}
@@ -121,15 +123,16 @@
 					display: block;
 					// z-index: 2;
 					position: absolute;
-					width: 12px;
-					height: 12px;
+					width: 24px;
+					height: 24px;
 					border-radius: 50%;
 					-moz-border-radius: 50%;
 					-webkit-border-radius: 50%;
-					background-color: rgba(9,187,7,0.3);
+					// background-color: rgba(9,187,7,0.3);
+					@include background(radial-gradient(rgba(9,187,7,0.3) 20%, transparent 40%));
 					top: 50%;
-					margin-top: -6px;
-					margin-left: -3px;
+					margin-top: -12px;
+					margin-left: -9px;
 					cursor: pointer;
 					outline: 0;
 					-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -138,7 +141,7 @@
 		}
 		.wx-audio-time{
 			width: 100%;
-			padding-top: 8px;
+			padding-top: 6px;
 			height: auto;
 			@include display-flex;
 			@include justify-content(space-between);

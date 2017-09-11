@@ -1,4 +1,4 @@
-/* line 5, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 5, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 103, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, D:/qianduan/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+/* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -73,14 +73,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: auto;
   padding: 8px 10px;
   border: 1px solid rgba(33, 44, 55, 0.3);
-  margin: 30px auto;
+  margin: 0 auto;
   font-size: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
-/* line 9, ../sass/wx-audio/_audio.scss */
+/* line 11, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-info {
   display: none;
 }
-/* line 12, ../sass/wx-audio/_audio.scss */
+/* line 14, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-left {
   display: inline-block;
   vertical-align: middle;
@@ -90,12 +94,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 42px;
   height: 100%;
 }
-/* line 16, ../sass/wx-audio/_audio.scss */
+/* line 18, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-left .wx-audio-state {
   width: 100%;
   height: 100%;
 }
-/* line 21, ../sass/wx-audio/_audio.scss */
+/* line 23, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right {
   display: inline-block;
   vertical-align: middle;
@@ -109,7 +113,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   box-sizing: border-box;
   padding-left: 10px;
 }
-/* line 27, ../sass/wx-audio/_audio.scss */
+/* line 29, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-title {
   padding-bottom: 6px;
   width: 100%;
@@ -121,7 +125,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
 }
-/* line 34, ../sass/wx-audio/_audio.scss */
+/* line 36, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-disc {
   width: 100%;
   white-space: nowrap;
@@ -133,13 +137,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 12px;
   color: #8c8c8c;
 }
-/* line 41, ../sass/wx-audio/_audio.scss */
+/* line 43, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees {
   height: 2px;
   width: calc(100% - 4px);
   position: relative;
 }
-/* line 45, ../sass/wx-audio/_audio.scss */
+/* line 47, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-progrees-detail {
   height: 100%;
   width: 100%;
@@ -152,7 +156,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -webkit-user-select: none;
   user-select: none;
 }
-/* line 53, ../sass/wx-audio/_audio.scss */
+/* line 55, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-progrees-detail .wx-voice-p {
   width: 0%;
   position: absolute;
@@ -164,7 +168,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: #09bb07;
   z-index: 2;
 }
-/* line 64, ../sass/wx-audio/_audio.scss */
+/* line 66, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-progrees-detail .wx-buffer-p {
   width: 0%;
   position: absolute;
@@ -176,7 +180,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   background: #d9d9d9;
   z-index: 1;
 }
-/* line 75, ../sass/wx-audio/_audio.scss */
+/* line 77, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-progrees-detail .wx-loading {
   display: none;
   position: absolute;
@@ -186,7 +190,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   right: 0;
   overflow: hidden;
 }
-/* line 83, ../sass/wx-audio/_audio.scss */
+/* line 85, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-progrees-detail .wx-loading .wx-loading-wrapper {
   position: absolute;
   top: 0;
@@ -223,7 +227,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
     transform: translateX(0);
   }
 }
-/* line 106, ../sass/wx-audio/_audio.scss */
+/* line 108, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-audio-origin {
   width: 6px;
   height: 6px;
@@ -238,35 +242,38 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   top: 50%;
   z-index: 2;
 }
-/* line 119, ../sass/wx-audio/_audio.scss */
+/* line 121, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-progrees .wx-audio-origin:before {
   content: " ";
   display: block;
   position: absolute;
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  background-color: rgba(9, 187, 7, 0.3);
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNDAlIj48c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iIzA5YmIwNyIgc3RvcC1vcGFjaXR5PSIwLjMiLz48c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background: -moz-radial-gradient(rgba(9, 187, 7, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+  background: -webkit-radial-gradient(rgba(9, 187, 7, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
+  background: radial-gradient(rgba(9, 187, 7, 0.3) 20%, rgba(0, 0, 0, 0) 40%);
   top: 50%;
-  margin-top: -6px;
-  margin-left: -3px;
+  margin-top: -12px;
+  margin-left: -9px;
   cursor: pointer;
   outline: 0;
   -webkit-tap-highlight-color: transparent;
 }
-/* line 139, ../sass/wx-audio/_audio.scss */
+/* line 142, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-time {
   width: 100%;
-  padding-top: 8px;
+  padding-top: 6px;
   height: auto;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-/* line 145, ../sass/wx-audio/_audio.scss */
+/* line 148, ../sass/wx-audio/_audio.scss */
 .wx-audio-content .wx-audio-right .wx-audio-time span {
   font-size: 12px;
   color: #8c8c8c;

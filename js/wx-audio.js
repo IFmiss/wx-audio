@@ -7,8 +7,7 @@
 			title: '这是一个测试title',
 			src: '',
 			disc: '这是一个测试disc',
-			loop: true,
-			autoplay: false
+			loop: true
 		}
 
 		this.opt = this.extend(this.value, options, true)
