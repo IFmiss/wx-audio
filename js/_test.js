@@ -3,9 +3,9 @@
 		if (!(this instanceof Wxaudio)) return new Wxaudio(options)
 		this.value = {
 			ele: '',
-			width: '320px',
+			width: '400px',
 			title: '这是一个测试title',
-			src: '',
+			src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
 			disc: '这是一个测试disc',
 			loop: true,
 			autoplay: false
@@ -190,26 +190,23 @@
 						bufferedT += _this.wxAudio.buffered.end(i) - _this.wxAudio.buffered.start(i)
 						if(bufferedT > _this.durationT) {
 							bufferedT = _this.durationT
-							_this.showLoading(false)
-							console.log('缓冲完成')
+							_this.wxLoading.style.display = 'none'
 						} else {
-							_this.showLoading(true)
-							// console.log('缓冲中...')
+							_this.wxLoading.style.display = 'block'
 						}
 					}
 					var bufferedP = Math.floor((bufferedT / _this.durationT) * 100)
 					_this.wxBufferP.style.width = bufferedP + '%'
 				}
-
 				// ===========================
 				var date = new Date ()
-				// console.log(_this.reduceTAfter + '-------------------------' + _this.reduceTBefore)
+				console.log(_this.wxAudio.paused)
 				if(!_this.wxAudio.paused) {
 					_this.reduceTAfter = Date.parse(date) - Math.floor(_this.currentT * 1000)
 					if(_this.reduceTAfter - _this.reduceTBefore > 1000) {
-						_this.showLoading(true)
+						_this.wxLoading.style.display = 'block'
 					} else {
-						_this.showLoading(false)
+						_this.wxLoading.style.display = 'none'
 					}
 				} else {
 					return
@@ -220,8 +217,8 @@
 				var date = new Date ()
 				if (!_this.isDrag) {
 					_this.currentT = _this.wxAudio.currentTime
-					_this.currentP = Number((_this.wxAudio.currentTime / _this.durationT) * 100)
 					_this.reduceTBefore = Date.parse(date) - Math.floor(_this.currentT * 1000)
+					_this.currentP = Number((_this.wxAudio.currentTime / _this.durationT) * 100)
 					_this.currentP = _this.currentP > 100 ? 100 : _this.currentP
 					_this.wxVoiceP.style.width = _this.currentP + '%'
 					_this.wxAudioOrigin.style.left = _this.currentP + '%'
@@ -235,27 +232,34 @@
 			}
 
 			_this.wxAudioOrigin.onmousedown = function (event) {
+				// _this.mouseDown(e, _this);
+				// drag
 				_this.isDrag = true
-				var e = event || window.event
-				var x = e.clientX
+				let e = event || window.event
+				let x = e.clientX
 				var l = event.target.offsetLeft
-				// console.log(x)
-				// console.log(l)
-				// console.log(_this.maxProgressWidth)
-				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth
+				console.log(event.target.offsetLeft)
+				console.log(event.target.offsetWidth / 2)
+				console.log(_this.maxProgressWidth)
+				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth - (event.target.offsetWidth / 2)
 				_this.wxAudioC.onmousemove = function (event) {
 					if (_this.isDrag) {
-						var e = event || window.event
-						var thisX = e.clientX
+						let e = event || window.event
+						let thisX = e.clientX
 						_this.dragProgressTo = Math.min(_this.maxProgressWidth, Math.max(0, l + (thisX - x)))
 						// _this.wxAudioOrigin.style.left = to + 'px'
-						console.log(e.clientX + '--------')
-						console.log(_this.maxProgressWidth + '--------')
-						console.log(l + (thisX - x) + '--------')
+						// console.log(to + '--------' + max)
 						// update Time
 						_this.updatePorgress(_this)
 					}
+
+					// _this.ondrag(Math.round(Math.max(0, to / max) * 100), to)
+					// window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty()
 				}
+				// _this.wxAudioC.onmouseup = new Function('this.onmouseup = null')
+				// _this.wxAudioC.onmouseleave = new Function('this.onmouseup = null')
+				// _this.wxAudioC.onmouseup = new Function('this.onmousemove=null');
+				// _this.wxAudioC.onmouseleave = new Function('this.onmousemove = null')
 				_this.wxAudioC.onmouseup = function () {
 					console.log(_this.dragProgressTo +' ------- '+ _this.maxProgressWidth + ' ---------- ' + _this.durationT)
 					if (_this.isDrag) {
@@ -276,39 +280,9 @@
 				}
 			}
 
-			_this.wxAudioOrigin.ontouchstart = function (event) {
-				_this.isDrag = true
-				var e = event || window.event
-				var x = e.touches[0].clientX
-				var l = e.target.offsetLeft
-
-				_this.maxProgressWidth = _this.wxAudioDetail.offsetWidth
-
-				_this.wxAudioC.ontouchmove = function (event) {
-					if (_this.isDrag) {
-						var e = event || window.event
-						var thisX = e.touches[0].clientX
-						_this.dragProgressTo = Math.min(_this.maxProgressWidth, Math.max(0, l + (thisX - x)))
-						_this.updatePorgress(_this)
-					}
-				},
-				_this.wxAudioC.ontouchend = function () {
-					// console.log(_this.dragProgressTo +' ------- '+ _this.maxProgressWidth + ' ---------- ' + _this.durationT)
-					if (_this.isDrag) {
-						_this.isDrag = false
-						_this.wxAudio.currentTime = Math.floor(_this.dragProgressTo / _this.maxProgressWidth * _this.durationT)
-					} else {
-						return
-					}
-				}
-			}
-
 			_this.wxAudioDetail.onclick = function (event) {
-				var e = event || window.event
-				var l = e.layerX
-				var w = _this.wxAudioDetail.offsetWidth
-				// console.log(l + '------------' + w)
-				_this.wxAudio.currentTime = Math.floor(l / w * _this.durationT)
+				let e = event || window.event
+				console.log(e.target.offsetLeft + '--------------' + e.target.offsetWidth)
 			}
 
 			// _this.wxAudioOrigin.ontachstart = function () {
