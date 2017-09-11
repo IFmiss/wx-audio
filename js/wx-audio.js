@@ -237,7 +237,7 @@
 				_this.isDrag = true
 				var e = event || window.event
 				var x = e.clientX
-				var l = event.target.offsetLeft + 7
+				var l = event.target.offsetLeft
 				// console.log(x)
 				// console.log(l)
 				// console.log(_this.maxProgressWidth)
