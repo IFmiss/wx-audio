@@ -58,7 +58,7 @@
 			// left image
 			this.wxAudioStateImg = document.createElement('img')
 			this.wxAudioStateImg.className = 'wx-audio-state'
-			this.wxAudioStateImg.src = '../images/pause.png'
+			this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/pause.png'
 			this.wxAudioL.appendChild(this.wxAudioStateImg)
 
 			// right
@@ -168,11 +168,11 @@
 				_this.isPlaying = true
 				_this.showLoading(false)
 				_this.reduceTBefore = Date.parse(date) - Math.floor(_this.wxAudio.currentTime * 1000)
-				_this.wxAudioStateImg.src = '../images/playing.gif'
+				_this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/playing.gif'
 			},
 			_this.wxAudio.onpause = function () {
 				_this.isPlaying = false
-				_this.wxAudioStateImg.src = '../images/pause.png'
+				_this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/pause.png'
 			},
 			_this.wxAudio.onloadedmetadata = function () {
 				_this.durationT = _this.wxAudio.duration
@@ -180,7 +180,9 @@
 				_this.wxAudioDuration.innerText = _this.formartTime(_this.durationT)
 			},
 			_this.wxAudio.onwaiting = function () {
-				_this.showLoading(true)
+				if(!_this.wxAudio.paused) {
+					_this.showLoading(true)	
+				}
 			},
 			_this.wxAudio.onprogress = function () {
 				if(_this.wxAudio.buffered.length > 0) {
