@@ -166,12 +166,12 @@
 			_this.wxAudio.onplaying = function () {
 				var date = new Date ()
 				_this.isPlaying = true
-				_this.showLoading(false)
 				_this.reduceTBefore = Date.parse(date) - Math.floor(_this.wxAudio.currentTime * 1000)
 				_this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/playing.gif'
 			},
 			_this.wxAudio.onpause = function () {
 				_this.isPlaying = false
+				_this.showLoading(false)
 				_this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/pause.png'
 			},
 			_this.wxAudio.onloadedmetadata = function () {
@@ -181,7 +181,7 @@
 			},
 			_this.wxAudio.onwaiting = function () {
 				if(!_this.wxAudio.paused) {
-					_this.showLoading(true)	
+					_this.showLoading(true)
 				}
 			},
 			_this.wxAudio.onprogress = function () {
@@ -193,9 +193,6 @@
 							bufferedT = _this.durationT
 							_this.showLoading(false)
 							console.log('缓冲完成')
-						} else {
-							_this.showLoading(true)
-							// console.log('缓冲中...')
 						}
 					}
 					var bufferedP = Math.floor((bufferedT / _this.durationT) * 100)
@@ -228,6 +225,7 @@
 					_this.wxAudioOrigin.style.left = _this.currentP + '%'
 					// 更改时间进度
 					_this.wxAudioCurrent.innerText = _this.formartTime(_this.wxAudio.currentTime)
+					_this.showLoading(false)
 				}
 			},
 			// 页面点击事件
