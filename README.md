@@ -30,8 +30,8 @@
 ### 新增 音乐组件切歌方法 
 通过实例化的wxAudio的audioCut(src,title,disc)  实现音频切换的效果  示例代码如下
 <pre>
-    var src = 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E5%A5%B9%E8%AF%B41.mp3'
-		var title = '她说'
-		var disc = '林俊杰'
-		wxAudio.audioCut(src, title, disc)
+  var src = 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E5%A5%B9%E8%AF%B41.mp3'
+  var title = '她说'
+  var disc = '林俊杰'
+  wxAudio.audioCut(src, title, disc)
 </pre>
