@@ -26,8 +26,8 @@
   
   wxAudio.audioPlayPause()  // 播放暂停
   
-  wxAudio.showLoading()  //显示加载状态
-  
+  wxAudio.showLoading(bool)  //显示加载状态  参数bool
+  
   wxAudio的audioCut(src,title,disc)  实现音频切换的效果
 </pre>
 
