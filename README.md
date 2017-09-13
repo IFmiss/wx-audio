@@ -6,6 +6,12 @@
 ## 显示效果图
 ![](https://github.com/IFmiss/wx-audio/blob/master/images/audio.gif)
 
+## 演示地址
+http://www.daiwei.org/components/wx-audio/html/audio.html
+
+## 手机预览
+
+
 ### 实例化 音乐组件 
 <pre>
   var wxAudio = new Wxaudio({
