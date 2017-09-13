@@ -10,9 +10,10 @@
 <body>
 
 	<div id="textaudio1" style="margin-top: 60px"></div>
+	<span id="cutMusic" onclick="cutM()">切歌</span>
 	<a style="position: absolute;bottom: 30px;right: 30px;color: #333;" target="_blank" href="https://github.com/IFmiss/wx-audio">--> github地址,欢迎star</a>
 </body>
-<script src="http://www.daiwei.org/components/wx-audio/js/wx-audio.js"></script>
+<script src="../js/wx-audio.js"></script>
 <script>
 	var wxAudio = new Wxaudio({
 		ele: '#textaudio1',
@@ -23,6 +24,13 @@
 	});
 	function play() {
 		wxAudio.audioPlay()
+	}
+
+	function cutM () {
+		var src = 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E5%A5%B9%E8%AF%B41.mp3'
+		var title = '她说'
+		var disc = '林俊杰'
+		wxAudio.audioCut(src, title, disc)
 	}
 </script>
 </html>

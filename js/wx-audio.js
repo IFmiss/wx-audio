@@ -151,6 +151,18 @@
 			}
 		},
 
+		audioCut: function (src, title, disc) {
+			this.wxAudio.src = src
+			this.wxAudioT.innerText = title
+			this.wxAudioD.innerText = disc
+			this.durationT = 0
+			this.currentT = 0
+			this.currentP = 0
+			this.dragProgressTo = 0
+			this.updatePorgress()
+			this.audioPlay()
+		},
+
 		showLoading: function (bool) {
 			this.loading = bool || false
 			if (this.loading) {
@@ -252,7 +264,7 @@
 						console.log(_this.maxProgressWidth + '--------')
 						console.log(l + (thisX - x) + '--------')
 						// update Time
-						_this.updatePorgress(_this)
+						_this.updatePorgress()
 					}
 				}
 				_this.wxAudioC.onmouseup = function () {
@@ -288,7 +300,7 @@
 						var e = event || window.event
 						var thisX = e.touches[0].clientX
 						_this.dragProgressTo = Math.min(_this.maxProgressWidth, Math.max(0, l + (thisX - x)))
-						_this.updatePorgress(_this)
+						_this.updatePorgress()
 					}
 				},
 				_this.wxAudioC.ontouchend = function () {
@@ -315,13 +327,13 @@
 			// }
 		},
 
-		updatePorgress: function (that) {
-			that.wxAudioOrigin.style.left = that.dragProgressTo + 'px'
-			that.wxVoiceP.style.width = that.dragProgressTo + 'px'
-			var currentTime = Math.floor(that.dragProgressTo / that.maxProgressWidth * that.durationT)
-			// that.wxAudio.currentTime = currentTime
-			that.wxAudioCurrent.innerText = that.formartTime(currentTime)
-			// that.wxAudio.currentTime = Math.floor(that.dragProgressTo / that.maxProgressWidth * that.durationT)
+		updatePorgress: function () {
+			this.wxAudioOrigin.style.left = this.dragProgressTo + 'px'
+			this.wxVoiceP.style.width = this.dragProgressTo + 'px'
+			var currentTime = Math.floor(this.dragProgressTo / this.maxProgressWidth * this.durationT)
+			// this.wxAudio.currentTime = currentTime
+			this.wxAudioCurrent.innerText = this.formartTime(currentTime)
+			// this.wxAudio.currentTime = Math.floor(this.dragProgressTo / this.maxProgressWidth * this.durationT)
 		},
 
 		formartTime: function (seconds) {
