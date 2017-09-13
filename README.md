@@ -6,6 +6,7 @@
 ## 显示效果图
 ![](https://github.com/IFmiss/wx-audio/blob/master/images/audio.gif)
 
+### 实例化 音乐组件 
 <pre>
   var wxAudio = new Wxaudio({
      ele: '#textaudio1',
@@ -14,7 +15,10 @@
      src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
      width: '320px'
   });
-  
+</pre>
+
+### 方法
+<pre>
   // 实例化的wxAudio可以这样操作
   wxAudio.audioPlay()   // 播放
   
