@@ -196,6 +196,11 @@
 					_this.showLoading(true)
 				}
 			},
+			_this.wxAudio.oncanplay = function () {
+				_this.durationT = _this.wxAudio.duration
+				// 初始化视频时间
+				_this.wxAudioDuration.innerText = _this.formartTime(_this.durationT)
+			},
 			_this.wxAudio.onprogress = function () {
 				if(_this.wxAudio.buffered.length > 0) {
 					var bufferedT = 0
