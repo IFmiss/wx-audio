@@ -48,6 +48,8 @@
 			this.wxAudio = document.createElement('audio')
 			this.wxAudio.className = 'wx-audio-content'
 			this.wxAudio.src = this.opt.src
+			// this.wxAudio.setAttribute("preload","auto")
+			// this.wxAudio.preload = 'auto'
 			this.wxAudioC.appendChild(this.wxAudio)
 
 			// left
@@ -159,7 +161,10 @@
 			this.currentT = 0
 			this.currentP = 0
 			this.dragProgressTo = 0
-			this.updatePorgress()
+			// 初始化 wxAudioCurrent 的文案
+			this.wxAudioCurrent.innerText = '00:00'
+			this.wxAudioOrigin.style.left = '0px'
+			this.wxVoiceP.style.width = '0px'
 			this.audioPlay()
 		},
 
@@ -189,7 +194,7 @@
 			_this.wxAudio.onloadedmetadata = function () {
 				_this.durationT = _this.wxAudio.duration
 				// 初始化视频时间
-				_this.wxAudioDuration.innerText = _this.formartTime(_this.durationT)
+				_this.wxAudioDuration.innerText = _this.formartTime(_this.wxAudio.duration)
 			},
 			_this.wxAudio.onwaiting = function () {
 				if(!_this.wxAudio.paused) {
