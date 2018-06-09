@@ -1,9 +1,10 @@
+@import "node_modules/compass-mixins/lib/compass/css3";
 @import '~scss/common/_index.scss';
 body,html{
 	margin: 0;
 	padding: 0;
 	height:100%;
-	background: #111010;
+	background: #fff;
 }
 body{
 	// background: red;
@@ -15,7 +16,7 @@ body{
 	@include flex-direction(column);
 	.title{
 		font-size: 42px;
-		@include colortext-l(#B32FC3, #D1A22F)
+		@include colortext-l(rgba(50, 219, 154, 0.856), rgba(209, 163, 47, 0.808));
 		@include inline-block;
 		margin-top: 0;
 	}
@@ -33,5 +34,14 @@ body{
 			font: $font_auto;
 			font-size:14px;
 		}
-	}
+  }
+  .btn{
+    width: 320px;
+    line-height: 40px;
+    background: #999;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    margin-top: 30px;
+  }
 }

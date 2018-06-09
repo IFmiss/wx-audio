@@ -1,61 +1,26 @@
 import './style.scss'
-import 'static/font-icon/style.css'
-// import './test_scroll.scss'
-// import Bscroll from 'better-scroll'
-// // alert(Bscroll);
-// let test_scroll = document.querySelector('.test_scroll');
-// let scroll = new Bscroll(test_scroll,{
-//     scrollY: true,
-//     click: true,
-//     pullUpLoad: true,
-//     pullDownRefresh: true
-// })
-
-// scroll.on('pullingDown', () => {
-// 	console.log(1)
-// })
-
-// scroll.on('scroll', (pos) => {
-// 	// console.log(pos)
-// })
-
-
+import WxAudio from './lib/wx-audio.js';
 import {utils} from 'commonjs/utils.js';
-import {dom} from 'commonjs/dom.js';
-// alert(utils.dataType.isNumber(1))
 
-// console.log(utils.deviceVersion ())
-// dom.addCss('http://www.daiwei.org/global.css');
+const wx = new WxAudio ({
+	ele: '.wx-audio',
+	title: '河山大好',
+	disc: '许嵩',
+	src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
+	width: '320px'
+})
 
-// console.log(utils.getRandomEleFromArr([1,3,4,5,6,222,3312,1,2,3,4,1,4,22123,41], 25))
-// console.log(dom.getScrollWidth())
+document.getElementById('play').onclick = function () {
+	wx.audioPlay()
+}
 
-// utils.notification().then((res) => {
-// 	alert('你点击了我')
-// }, (err) => {
-// 	alert('不支持哦')
-// })
+document.getElementById('pause').onclick = function () {
+	wx.audioPause()
+}
 
-// console.log(utils.randomColor(0.2))
-
-// utils.showLayoutFramework()
-
-// console.log(utils.strLength('nihao啊啊啊啊啊'))
-
-console.log(utils.extendDeep(
-	{
-		a:{
-			c: 1,
-			d: 2
-		},
-		b:[2,3,4,5,6]
-	},
-	{
-		b:[2,33,422,111],
-		a:{
-			e: 3,
-			c: 11111,
-			d: 2222
-		}
-	}
-))
+document.getElementById('cut').onclick = function () {
+	var src = 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E5%A5%B9%E8%AF%B41.mp3'
+  var title = '她说'
+  var disc = '林俊杰'
+  wx.audioCut(src, title, disc)
+}

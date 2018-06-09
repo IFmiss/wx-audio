@@ -19,8 +19,8 @@
             this.opt.ele = options.ele
         }
 
-        this.loading = false
-        this.isDrag = false
+		this.loading = false
+		this.isDrag = false
 		this.isplaying = false
 		this.durationT = 0
 		this.currentT = 0
@@ -32,7 +32,7 @@
 		this.reduceTBefore = 0   // 时间戳与当前时间的差值 (初始化)
 		this.reduceTAfter = 0   // 时间戳与当前时间的差值 (执行中)
 
-        this.initDom();
+    this.initDom();
 	}
 
 	Wxaudio.prototype = {

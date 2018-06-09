@@ -2,7 +2,7 @@
   "name": "wx-audio",
   "version": "1.0.0",
   "description": "wx-audio",
-  "main": "webpack.config.js",
+  "main": "/src/lib/wx-audio.js",
   "dependencies": {
     "hoek": "^5.0.3"
   },
@@ -12,8 +12,16 @@
     "dev": "webpack-dev-server --mode development --progress --colors",
     "watch": "webpack --progress --colors --watch"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/ifmiss/wx-audio.js"
+  },
   "keywords": [
-    "webpack"
+    "audio",
+    "wx",
+    "we-audio",
+    "wx-audio",
+    "music"
   ],
   "author": "daiwei",
   "license": "ISC",
