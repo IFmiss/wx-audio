@@ -1,0 +1,155 @@
+.wx-audio-content{
+	@include user-select(none);
+	width:300px;
+	height:auto;
+	padding:8px 10px;
+	border: 1px solid rgba(33,44,55,0.3);
+	margin:0 auto;
+	font-size:0;
+	@include box-sizing(border-box);
+	-webkit-tap-highlight-color:transparent;
+	.wx-audio-info{
+		display: none;
+	}
+	.wx-audio-left{
+		@include inline-block;
+		width:42px;
+		height: 100%;
+		.wx-audio-state{
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.wx-audio-right{
+		@include inline-block;
+		width: calc(100% - 42px);
+		font-size: 16px;
+		@include box-sizing(border-box);
+		padding-left:10px;
+		.wx-audio-title{
+			padding-bottom: 6px;
+			width: 100%;
+			font-size: 14px;
+			font-weight: 400;
+		    @include ellipsis();
+		}
+		.wx-audio-disc{
+			width: 100%;
+			@include ellipsis();
+			padding-bottom: 10px;
+			font-size: 12px;
+			color: #8c8c8c;
+		}
+		.wx-audio-progrees{
+			height: 2px;
+			width: calc(100% - 4px);
+			position:relative;
+			.wx-progrees-detail{
+				height: 100%;
+				width: 100%;
+				background:#ebebeb;
+				position:relative;
+				cursor: pointer;
+				-webkit-tap-highlight-color: transparent;
+				@include user-select(none);
+				.wx-voice-p{
+					width: 0%;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					overflow: hidden;
+					background:#09bb07;
+					z-index: 2;
+				}
+				.wx-buffer-p{
+					width: 0%;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					overflow: hidden;
+					background:#d9d9d9;
+					z-index: 1;
+				}
+				.wx-loading{
+					display: none;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					overflow: hidden;
+					.wx-loading-wrapper{
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						@include animation(slidein 6s linear infinite normal);
+						width: 200%;
+						max-width: none!important;
+						@include background-image(repeating-linear-gradient(-15deg,#d9d9d9,#d9d9d9 2px,#ebebeb 2px,#ebebeb 4px));
+					}
+
+					@keyframes slidein {
+						0% {
+							@include translateX(-50%);
+							@include translateX(-50%);
+						}
+						100% {
+							@include translateX(0);
+							@include translateX(0);
+						}
+					}
+				}
+			}
+			.wx-audio-origin{
+				width: 6px;
+				height: 6px;
+				margin-top: -3px;
+				margin-left: 0;
+				border-radius: 50%;
+				-moz-border-radius: 50%;
+				-webkit-border-radius: 50%;
+				background-color: #09bb07;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				z-index: 2;
+				&:before{
+					content: " ";
+					display: block;
+					// z-index: 2;
+					position: absolute;
+					width: 24px;
+					height: 24px;
+					border-radius: 50%;
+					-moz-border-radius: 50%;
+					-webkit-border-radius: 50%;
+					// background-color: rgba(9,187,7,0.3);
+					@include background(radial-gradient(rgba(9,187,7,0.3) 20%, transparent 40%));
+					top: 50%;
+					margin-top: -12px;
+					margin-left: -9px;
+					cursor: pointer;
+					outline: 0;
+					-webkit-tap-highlight-color: rgba(0,0,0,0);
+				}
+			}
+		}
+		.wx-audio-time{
+			width: 100%;
+			padding-top: 6px;
+			height: auto;
+			@include display-flex;
+			@include justify-content(space-between);
+			overflow: hidden;
+			span{
+				font-size: 12px;
+				color: #8c8c8c;
+			}
+		}
+	}
+}
