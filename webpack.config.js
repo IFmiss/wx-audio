@@ -96,12 +96,6 @@ module.exports = {
 			template: 'index.html',
 			inject: true
 		}),
-		new HtmlWebpackPlugin ({
-			path: path.resolve(__dirname, 'dist'),
-			filename: 'about.html',
-			template: './src/pages/about/about.html',
-			inject: true
-		}),
 		extractSass
 	],
 	devServer: {

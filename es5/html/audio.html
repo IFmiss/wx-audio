@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿微信音乐组件</title>
+	<meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="http://www.daiwei.org/components/wx-audio/css/wx-audio.css">
+</head>
+<style>
+	.listC{
+		width: 300px;
+		margin: 0 auto;
+		height: auto;
+	}
+	.list{
+		font-size: 14px;
+		background: #aaa;
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		color: #fff;
+		margin:20px 0;
+		text-align: center;
+		cursor: pointer;
+	}
+	.list:hover{
+		background: #999;
+	}
+</style>
+<body>
+
+	<div id="textaudio1" style="margin-top: 60px"></div>
+	<div class="listC">
+		<p id="cutMusic" class="list" onclick="cutM()">切歌</p>
+		<p id="cutMusic" class="list" onclick="play()">播放</p>
+		<p id="cutMusic" class="list" onclick="pause()">暂停</p>
+		<p id="cutMusic" class="list" onclick="playPause()">播放/暂停</p>
+	</div>
+	<a style="position: absolute;bottom: 30px;right: 30px;color: #333;" target="_blank" href="https://github.com/IFmiss/wx-audio">--> github源码地址,欢迎star</a>
+</body>
+<script src="../js/wx-audio.js"></script>
+<script>
+	var wxAudio = new Wxaudio({
+		ele: '#textaudio1',
+		title: '河山大好',
+		disc: '许嵩',
+		src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
+		width: '320px'
+	});
+	function play() {
+		wxAudio.audioPlay()
+	}
+
+	function pause() {
+		wxAudio.audioPause()
+	}
+
+	function playPause() {
+		wxAudio.audioPlayPause()
+	}
+
+	function cutM () {
+		var src = 'http://oiq8j9er1.bkt.clouddn.com/%E6%9E%97%E4%BF%8A%E6%9D%B0%20-%20%E5%A5%B9%E8%AF%B41.mp3'
+		var title = '她说'
+		var disc = '林俊杰'
+		wxAudio.audioCut(src, title, disc)
+	}
+</script>
+</html>
