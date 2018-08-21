@@ -4,7 +4,8 @@
   "description": "wx-audio",
   "main": "/src/lib/wx-audio.js",
   "dependencies": {
-    "hoek": "^5.0.3"
+    "hoek": "^5.0.3",
+    "node-sass": "^4.9.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,13 +33,10 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "^6.24.1",
     "better-scroll": "^1.8.4",
-    "c-video": "^1.0.7",
     "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
-    "d-video": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
-    "node-sass": "^4.7.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "stylus": "^0.54.5",

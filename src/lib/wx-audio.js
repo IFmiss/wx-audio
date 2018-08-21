@@ -7,7 +7,8 @@ export default class WxAudio {
       title: '这是一个测试title',
       src: '',
       disc: '这是一个测试disc',
-      loop: true
+      loop: true,
+      ended: function () {}
     }
     this.opt = Object.assign(defaultOptions, tpl)
     // 判断传进来的是DOM还是字符串
@@ -231,6 +232,10 @@ export default class WxAudio {
         return
       }
     },
+    // 播放结束事件
+    _this.wxAudio.onended = function () {
+      _this.opt.ended()
+    }
     // 绑定进度条
     _this.wxAudio.ontimeupdate = function () {
       var date = new Date ()
