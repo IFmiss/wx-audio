@@ -1,6 +1,6 @@
 {
   "name": "wx-audio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "wx-audio",
   "main": "/src/lib/wx-audio.js",
   "dependencies": {
