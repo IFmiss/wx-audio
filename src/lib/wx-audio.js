@@ -10,11 +10,12 @@ export default class WxAudio {
       loop: true,
       ended: function () {}
     }
-    this.opt = Object.assign(defaultOptions, tpl)
+    this.opt = Object.assign({}, defaultOptions, tpl)
     // 判断传进来的是DOM还是字符串
     if (typeof this.opt.ele === 'string') {
         this.opt.ele = document.querySelector(this.opt.ele)
     }
+    if (!this.opt.ele) return
 
     this.loading = false
 		this.isDrag = false
@@ -198,11 +199,6 @@ export default class WxAudio {
       if(!_this.wxAudio.paused) {
         _this.showLoading(true)
       }
-    },
-    _this.wxAudio.oncanplay = function () {
-      _this.durationT = _this.wxAudio.duration
-      // 初始化视频时间
-      _this.wxAudioDuration.innerText = _this.formartTime(_this.durationT)
     },
     _this.wxAudio.onprogress = function () {
       if(_this.wxAudio.buffered.length > 0) {
