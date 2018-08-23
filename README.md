@@ -12,16 +12,25 @@ http://www.daiwei.org/components/wx-audio/html/audio.html
 ## 手机预览
 
 ### 安装 
-<pre>
+npm 安装
+```js
   npm install wx-audio
-</pre>
+```
+
 ### 引入
-<pre>
-  import Wxaudio from 'wx-audio'
-</pre>
+```js
+  import WxAudio from 'wx-audio'
+```
+
+普通资源引入,先将es5文件下的目录放到自己的项目中，然后根据路径引入
+```html
+<link href="./wx-audio.css" rel="stylesheet">
+<script type="text/javascript" src="wx-audio.js"></script>
+```
+
 ### 实例化 音乐组件 
 ```js
-var wxAudio = new Wxaudio({
+var wxAudio = new WxAudio({
   ele: '#textaudio1',
   title: '河山大好',
   disc: '许嵩',
