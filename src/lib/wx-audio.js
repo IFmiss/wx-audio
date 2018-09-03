@@ -7,13 +7,16 @@ export default class WxAudio {
       title: '这是一个测试title',
       src: '',
       disc: '这是一个测试disc',
-      loop: true
+      // loop为true的时候不执行ended事件
+      loop: true,
+      ended: function () {}
     }
-    this.opt = Object.assign(defaultOptions, tpl)
+    this.opt = Object.assign({}, defaultOptions, tpl)
     // 判断传进来的是DOM还是字符串
     if (typeof this.opt.ele === 'string') {
         this.opt.ele = document.querySelector(this.opt.ele)
     }
+    if (!this.opt.ele) return
 
     this.loading = false
 		this.isDrag = false
@@ -43,8 +46,7 @@ export default class WxAudio {
     this.wxAudio = document.createElement('audio')
     this.wxAudio.className = 'wx-audio-content'
     this.wxAudio.src = this.opt.src
-    // this.wxAudio.setAttribute("preload","auto")
-    // this.wxAudio.preload = 'auto'
+    if (this.opt.loop) this.wxAudio.setAttribute('loop', this.opt.loop)
     this.wxAudioC.appendChild(this.wxAudio)
 
     // left
@@ -198,11 +200,6 @@ export default class WxAudio {
         _this.showLoading(true)
       }
     },
-    _this.wxAudio.oncanplay = function () {
-      _this.durationT = _this.wxAudio.duration
-      // 初始化视频时间
-      _this.wxAudioDuration.innerText = _this.formartTime(_this.durationT)
-    },
     _this.wxAudio.onprogress = function () {
       if(_this.wxAudio.buffered.length > 0) {
         var bufferedT = 0
@@ -231,6 +228,10 @@ export default class WxAudio {
         return
       }
     },
+    // 播放结束事件
+    _this.wxAudio.onended = function () {
+      _this.opt.ended()
+    }
     // 绑定进度条
     _this.wxAudio.ontimeupdate = function () {
       var date = new Date ()
