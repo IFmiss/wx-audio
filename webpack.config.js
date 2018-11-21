@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const extractSass = new ExtractTextPlugin({
-    filename: "css/[name]-[contenthash].css",
+    filename: "wx-audio.css",
     disable: process.env.NODE_ENV === "development"
 });
 
@@ -15,18 +15,21 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		index: './src/index.js'
+		// index: 'src/lib/wx-audio.js'
+		index: 'src/index.js'
 	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
-		publicPath: '',
-		filename: '[name]-[hash].js'
+		filename: 'wx-audio.js',
+		libraryTarget: 'var',
+		library: 'WxAudio',
+		libraryExport: 'default'
 	},
 	module: {
 		rules: [
 			{
 				test: /\.css$/,
-        		use: ExtractTextPlugin.extract({
+        	use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:["css-loader"]
 				})
@@ -42,12 +45,6 @@ module.exports = {
 						{
 							loader: 'sass-loader'
 						}
-						// {
-			   //            loader: 'sass-resources-loader',
-			   //            options: {
-			   //              resources: path.resolve(__dirname, 'src/scss/base.scss')
-			   //            }
-			   //          }
 					]
 				})
 			},
