@@ -1,12 +1,7 @@
 {
   "name": "wx-audio",
-<<<<<<< HEAD
-  "version": "1.0.1",
-  "description": "a simple audio plugin --- wx-audio",
-=======
   "version": "1.0.3",
   "description": "wx-audio",
->>>>>>> bb31d80ff0b518a45a2bdbff98d092af910090d2
   "main": "/src/lib/wx-audio.js",
   "dependencies": {
     "hoek": "^5.0.3",
