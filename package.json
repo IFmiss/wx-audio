@@ -1,6 +1,6 @@
 {
   "name": "wx-audio",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "wx-audio",
   "main": "/src/lib/wx-audio.js",
   "dependencies": {
@@ -39,6 +39,7 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
+    "node-sass": "^4.10.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "stylus": "^0.54.5",

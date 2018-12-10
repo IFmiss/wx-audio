@@ -9,6 +9,7 @@ export default class WxAudio {
       title: '这是一个测试title',
       src: '',
       disc: '这是一个测试disc',
+      // loop为true的时候不执行ended事件
       loop: true,
       ended: function () {}
     }
@@ -47,8 +48,7 @@ export default class WxAudio {
     this.wxAudio = document.createElement('audio')
     this.wxAudio.className = 'wx-audio-content'
     this.wxAudio.src = this.opt.src
-    // this.wxAudio.setAttribute("preload","auto")
-    // this.wxAudio.preload = 'auto'
+    if (this.opt.loop) this.wxAudio.setAttribute('loop', this.opt.loop)
     this.wxAudioC.appendChild(this.wxAudio)
 
     // left

@@ -36,12 +36,21 @@ var wxAudio = new WxAudio({
   disc: '许嵩',
   src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
   width: '320px',
+  loop: true,
   ended: function () {
     alert('播放结束')
   }
 });
 ```
 
+### 属性
+  - ele dom对象
+  - title 音乐标题
+  - disc 描述，可以当做显示歌手名称
+  - src 地址
+  - width 显示的宽度
+  - loop 是否循环（当循环状态下时候，ended事件不会执行）
+  - ended 方法，是一个回调，可在音乐播放结束之后执行其他的代码
 ### 方法
 ```js
  // 实例化的wxAudio可以这样操作
