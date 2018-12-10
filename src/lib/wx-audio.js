@@ -1,4 +1,6 @@
 import './wx-audio.scss'
+const playImg = require('./../assets/playing.gif')
+const pauseImg = require('./../assets/pause.png')
 export default class WxAudio {
   constructor (tpl) {
     let defaultOptions = {
@@ -57,7 +59,7 @@ export default class WxAudio {
     // left image
     this.wxAudioStateImg = document.createElement('img')
     this.wxAudioStateImg.className = 'wx-audio-state'
-    this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/pause.png'
+    this.wxAudioStateImg.src = pauseImg
     this.wxAudioL.appendChild(this.wxAudioStateImg)
 
     // right
@@ -183,12 +185,12 @@ export default class WxAudio {
       var date = new Date ()
       _this.isPlaying = true
       _this.reduceTBefore = Date.parse(date) - Math.floor(_this.wxAudio.currentTime * 1000)
-      _this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/playing.gif'
+      _this.wxAudioStateImg.src = playImg
     },
     _this.wxAudio.onpause = function () {
       _this.isPlaying = false
       _this.showLoading(false)
-      _this.wxAudioStateImg.src = 'http://www.daiwei.org/components/wx-audio/images/pause.png'
+      _this.wxAudioStateImg.src = pauseImg
     },
     _this.wxAudio.onloadedmetadata = function () {
       _this.durationT = _this.wxAudio.duration
