@@ -3,9 +3,6 @@
 
 #### 基于原生js写的一款仿微信公众号的音乐组件
 
-## 显示效果图
-![](https://github.com/IFmiss/wx-audio/blob/master/es5/images/audio.gif)
-
 ## 演示地址
 http://www.daiwei.org/components/wx-audio/
 
