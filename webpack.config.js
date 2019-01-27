@@ -15,13 +15,13 @@ const resolve = function (dir) {
 
 module.exports = {
 	entry: {
-		// index: 'src/lib/wx-audio.js'
-		index: 'src/index.js'
+		index: 'src/lib/wx-audio.js'
+		// index: 'src/index.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'lib'),
 		filename: 'wx-audio.js',
-		libraryTarget: 'var',
+		libraryTarget: 'umd',
 		library: 'WxAudio',
 		libraryExport: 'default'
 	},
@@ -87,11 +87,11 @@ module.exports = {
 		]
 	},
 	plugins: [
-		new HtmlWebpackPlugin ({
-			filename: 'index.html',
-			template: 'index.html',
-			inject: true
-		}),
+		// new HtmlWebpackPlugin ({
+		// 	filename: 'index.html',
+		// 	template: 'index.html',
+		// 	inject: true
+		// }),
 		extractSass
 	],
 	devServer: {
