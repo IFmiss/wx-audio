@@ -1,18 +1,14 @@
 {
-  "name": "wx-audio",
-  "version": "1.0.3",
+  "name": "@dw/wx-audio",
+  "version": "1.0.41",
   "description": "wx-audio",
-  "main": "/src/lib/wx-audio.js",
-  "dependencies": {
-    "hoek": "^5.0.3",
-    "node-sass": "^4.9.3",
-    "url-parse": "^1.4.3"
-  },
+  "main": "lib/wx-audio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development --progress --colors",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --colors --watch",
+    "publish": "npm publish --access=public"
   },
   "repository": {
     "type": "git",
@@ -28,6 +24,7 @@
   "author": "daiwei",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
@@ -38,14 +35,15 @@
     "css-loader": "^0.28.10",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.11.0",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "url-loader": "^1.0.1",
+    "url-parse": "^1.4.3",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
+    "webpack-cli": "^2.1.5",
     "webpack-dev-server": "^3.1.1"
   }
 }

@@ -20,10 +20,8 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'lib'),
-		filename: 'wx-audio.js',
-		libraryTarget: 'umd',
-		library: 'WxAudio',
-		libraryExport: 'default'
+		filename: 'd-audio.js',
+		libraryTarget: 'umd'
 	},
 	module: {
 		rules: [
@@ -49,10 +47,10 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.styl$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
-					use:["css-loader","stylus-loader"]
+					use:["css-loader","less-loader"]
 				})
 			},
 			{
@@ -97,6 +95,7 @@ module.exports = {
 	devServer: {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：
 		contentBase: "./",
+		host: '0.0.0.0',
 		// 端口号
 		port: 1997,
 		//当有编译器错误或警告时，在浏览器中显示全屏覆盖。默认禁用。如果您只想显示编译器错误：

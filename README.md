@@ -3,18 +3,15 @@
 
 #### 基于原生js写的一款仿微信公众号的音乐组件
 
-## 显示效果图
-![](https://github.com/IFmiss/wx-audio/blob/master/es5/images/audio.gif)
-
 ## 演示地址
-http://www.daiwei.org/components/wx-audio/html/audio.html
+http://www.daiwei.org/components/wx-audio/
 
 ## 手机预览
 
 ### 安装 
 npm 安装
 ```js
-  npm install wx-audio
+  npm install @dw/wx-audio
 ```
 
 ### 引入
