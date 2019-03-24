@@ -21,7 +21,9 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'lib'),
 		filename: 'd-audio.js',
-		libraryTarget: 'umd'
+		libraryTarget: 'umd',
+		library: 'WxAudio',
+		libraryExport: 'default'
 	},
 	module: {
 		rules: [

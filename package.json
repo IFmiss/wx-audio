@@ -1,6 +1,6 @@
 {
   "name": "@dw/wx-audio",
-  "version": "1.0.41",
+  "version": "1.0.5",
   "description": "wx-audio",
   "main": "lib/wx-audio.js",
   "scripts": {
@@ -10,6 +10,10 @@
     "watch": "webpack --progress --colors --watch",
     "publish": "npm publish --access=public"
   },
+  "files": [
+    "lib/",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://www.github.com/ifmiss/wx-audio.js"
