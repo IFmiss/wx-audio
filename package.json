@@ -1,14 +1,8 @@
 {
-  "name": "wx-audio",
-  "version": "1.0.3",
+  "name": "@dw/wx-audio",
+  "version": "1.0.51",
   "description": "wx-audio",
-  "main": "/src/lib/wx-audio.js",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "hoek": "^5.0.3",
-    "node-sass": "^4.9.3",
-    "url-parse": "^1.4.3"
-  },
+  "main": "src/lib/wx-audio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
@@ -19,6 +13,12 @@
     "type": "git",
     "url": "https://www.github.com/ifmiss/wx-audio.js"
   },
+  "files": [
+    "src/assets/",
+    "src/lib/",
+    "dist/",
+    "README.md"
+  ],
   "keywords": [
     "audio",
     "wx",
@@ -29,24 +29,22 @@
   "author": "daiwei",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "^6.24.1",
-    "better-scroll": "^1.8.4",
-    "compass-mixins": "^0.12.10",
     "css-loader": "^0.28.10",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
-    "node-sass": "^4.10.0",
-    "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
     "url-loader": "^1.0.1",
+    "url-parse": "^1.4.3",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-cli": "^3.3.1"
   }
 }

@@ -1,4 +1,4 @@
-import './style.scss'
+import './style.less'
 import WxAudio from './lib/wx-audio.js';
 
 import axios from 'axios'

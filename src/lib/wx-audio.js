@@ -1,4 +1,4 @@
-import './wx-audio.scss'
+import './wx-audio.less'
 const playImg = require('./../assets/playing.gif')
 const pauseImg = require('./../assets/pause.png')
 export default class WxAudio {
@@ -320,6 +320,11 @@ export default class WxAudio {
       var w = _this.wxAudioDetail.offsetWidth
       _this.wxAudio.currentTime = Math.floor(l / w * _this.durationT)
     }
+  }
+
+  isWeiXin () {
+    const uaLower = window.navigator.userAgent.toLowerCase()
+    return String(uaLower.match(/MicroMessenger/i)) === 'micromessenger'
   }
 
   updatePorgress () {

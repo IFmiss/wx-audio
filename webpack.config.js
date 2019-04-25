@@ -22,7 +22,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'dist'),
 		publicPath: '',
 		filename: 'wx-audio.js',
-		libraryTarget: 'var',
+		libraryTarget: 'umd',
 		library: 'WxAudio',
 		libraryExport: 'default'
 	},
@@ -36,7 +36,7 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.scss$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
 					use:[
@@ -44,7 +44,7 @@ module.exports = {
 							loader: 'css-loader'
 						},
 						{
-							loader: 'sass-loader'
+							loader: 'less-loader'
 						}
 					]
 				})
