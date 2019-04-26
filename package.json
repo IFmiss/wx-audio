@@ -1,6 +1,6 @@
 {
   "name": "@dw/wx-audio",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "wx-audio",
   "main": "lib/wx-audio.js",
   "scripts": {
