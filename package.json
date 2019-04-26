@@ -1,12 +1,12 @@
 {
   "name": "@dw/wx-audio",
-  "version": "1.0.51",
+  "version": "1.0.6",
   "description": "wx-audio",
   "main": "src/lib/wx-audio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "build:publish": "webpack --mode production && npm version minor && npm publish",
+    "build:publish": "webpack --mode production && npm version patch && npm publish",
     "dev": "webpack-dev-server --mode development --progress --colors",
     "watch": "webpack --progress --colors --watch"
   },
