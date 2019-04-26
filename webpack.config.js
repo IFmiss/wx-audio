@@ -19,8 +19,7 @@ module.exports = {
 		// index: './src/index.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'dist'),
-		publicPath: '',
+		path: path.resolve(__dirname, 'lib'),
 		filename: 'wx-audio.js',
 		libraryTarget: 'umd',
 		library: 'WxAudio',
@@ -50,10 +49,10 @@ module.exports = {
 				})
 			},
 			{
-				test: /\.styl$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback:"style-loader",
-					use:["css-loader","stylus-loader"]
+					use:["css-loader","less-loader"]
 				})
 			},
 			{
