@@ -2,7 +2,7 @@
   "name": "@dw/wx-audio",
   "version": "1.0.7",
   "description": "wx-audio",
-  "main": "lib/wx-audio.js",
+  "main": "src/lib/wx-audio.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
@@ -17,6 +17,8 @@
   },
   "files": [
     "lib/",
+    "src/lib",
+    "src/assets",
     "README.md"
   ],
   "keywords": [

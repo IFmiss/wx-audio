@@ -20,7 +20,7 @@ npm 安装
   import WxAudio from '@dw/wx-audio'
 ```
 
-普通资源引入,先将es5文件下的目录放到自己的项目中，然后根据路径引入
+普通资源引入,先将lib文件下的目录放到自己的项目中，然后根据路径引入
 ```html
 <link href="./wx-audio.css" rel="stylesheet">
 <script type="text/javascript" src="wx-audio.js"></script>
