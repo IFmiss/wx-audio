@@ -9,6 +9,7 @@ export default class WxAudio {
       title: '这是一个测试title',
       src: '',
       disc: '这是一个测试disc',
+      autoplay: false,
       // loop为true的时候不执行ended事件
       loop: true,
       ended: function () {}
@@ -132,6 +133,12 @@ export default class WxAudio {
     this.wxAudioTime.appendChild(this.wxAudioDuration)
 
     this.initAudioEvent();
+
+    if (this.opt.autoplay) {
+      document.addEventListener('WeixinJSBridgeReady', () => {
+        this.audioPlay()
+      })
+    }
   }
 
   // 播放
