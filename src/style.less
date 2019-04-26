@@ -4,6 +4,17 @@ body,html{
 	height:100%;
 	background: #fff;
 }
+
+.colortext-lt (@color1, @color2) {
+	position: relative;
+  background: -webkit-linear-gradient(left top, @color1 , @color2);   /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient(bottom right, @color1, @color2);     /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient(bottom right, @color1, @color2);   /* Firefox 3.6 - 15 */
+  background: linear-gradient(to bottom right, @color1 , @color2);    /* 标准的语法 */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 body{
 	// background: red;
 	display: flex;
@@ -14,8 +25,8 @@ body{
 	justify-content: center;
 	.title{
 		font-size: 42px;
-		// @include colortext-l(rgba(50, 219, 154, 0.856), rgba(209, 163, 47, 0.808));
 		display: inline-block;
+		.colortext-lt(rgba(50, 219, 154, 0.856), rgba(209, 163, 47, 0.808));
 		margin-top: 0;
 	}
 	.disc{
