@@ -16,7 +16,8 @@ npm 安装
 
 ### 引入
 ```js
-  import WxAudio from 'wx-audio'
+  import WxAudio from '@dw/wx-audio/lib/wx-audio.css'
+  import WxAudio from '@dw/wx-audio'
 ```
 
 普通资源引入,先将es5文件下的目录放到自己的项目中，然后根据路径引入
@@ -33,6 +34,7 @@ var wxAudio = new WxAudio({
   disc: '许嵩',
   src: 'http://oiq8j9er1.bkt.clouddn.com/%E8%AE%B8%E5%B5%A9%20-%20%E6%B2%B3%E5%B1%B1%E5%A4%A7%E5%A5%BD1.mp3',
   width: '320px',
+  autoplay: true,
   loop: true,
   ended: function () {
     alert('播放结束')
@@ -48,6 +50,7 @@ var wxAudio = new WxAudio({
   - width 显示的宽度
   - loop 是否循环（当循环状态下时候，ended事件不会执行）
   - ended 方法，是一个回调，可在音乐播放结束之后执行其他的代码
+  - autoplay 属性， 是否自动播放，这个只能在微信浏览器以及只设置静态src才能自动播放
 ### 方法
 ```js
  // 实例化的wxAudio可以这样操作
