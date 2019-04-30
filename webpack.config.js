@@ -3,6 +3,7 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const WebpackPromptPlugin = require("@dw/webpack-prompt-plugin")
 
 const extractSass = new ExtractTextPlugin({
     filename: "wx-audio.css",
@@ -85,7 +86,8 @@ module.exports = {
 		// 	template: 'index.html',
 		// 	inject: true
 		// }),
-		extractSass
+		extractSass,
+		new WebpackPromptPlugin()
 	],
 	devServer: {
 		// 当使用 HTML5 History API 时，任意的 404 响应都可能需要被替代为 index.html。通过传入以下启用：

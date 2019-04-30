@@ -31,6 +31,7 @@
   "author": "daiwei",
   "license": "ISC",
   "devDependencies": {
+    "@dw/webpack-prompt-plugin": "^1.0.7",
     "axios": "^0.18.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
@@ -38,15 +39,15 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-latest": "^6.24.1",
     "css-loader": "^0.28.10",
-    "less": "^3.9.0",
-    "less-loader": "^4.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.0.6",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
     "url-parse": "^1.4.3",
     "webpack": "^4.1.1",
-    "webpack-dev-server": "^3.1.1",
-    "webpack-cli": "^3.3.1"
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.1.1"
   }
 }

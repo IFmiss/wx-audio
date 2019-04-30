@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@dw/webpack-prompt-plugin@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@dw/webpack-prompt-plugin/-/webpack-prompt-plugin-1.0.7.tgz#0415efa0b25abc8c4657160c89740d2b4f2db1ae"
+  integrity sha512-eJOeUx5Wto4mn4pS/d53wvDkdAhVYY50BuOGHe+1DeXvqYH3MlfinPH4Jdna99D5dLncqR9RHh0P0b6fAQZA3g==
+
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.8.5.tgz#51b1c5fe6576a34953bf4b253df9f0d490d9e359"
